@@ -1,0 +1,40 @@
+package drawghost;
+
+import java.applet.*;
+import java.awt.*;
+
+
+public class DrawGhost extends Applet{
+
+	
+	public void init(){
+		setBackground(Color.BLACK);
+	}
+	public void paint(Graphics g){
+		this.drawGhostRed(g);
+	}
+	public void drawGhostRed(Graphics g){
+		int xGhostRed = 10;
+		int yGhostRed = 10;
+		int y1 = 60, y2 = 70;
+		int[] yGhost = {y1, y1, y2}; // 60 60 70
+		int[] xGhost1 = {10, 20, 15};
+		int[] xGhost2 = {20, 30, 25};
+		int[] xGhost3 = {30, 40, 35};
+		int[] xGhost4 = {40, 50, 45};
+		int[] xGhost5 = {50, 60, 55};
+		g.setColor(Color.red);
+		g.fillOval(xGhostRed, yGhostRed, 50, 50);
+		g.fillRect(xGhostRed, yGhostRed + 25, 50, 25);
+		g.fillPolygon(xGhost1, yGhost, 3);
+		g.fillPolygon(xGhost2, yGhost, 3);
+		g.fillPolygon(xGhost3, yGhost, 3);
+		g.fillPolygon(xGhost4, yGhost, 3);
+		g.fillPolygon(xGhost5, yGhost, 3);
+		g.setColor(Color.WHITE);
+		g.fillOval(xGhostRed + 10, yGhostRed + 10, 10, 10);
+		g.fillOval(xGhostRed + 27, yGhostRed + 10, 10, 10);
+		
+		
+	}
+}
