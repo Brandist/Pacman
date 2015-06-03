@@ -1,0 +1,121 @@
+package drawghost;
+
+import java.applet.*;
+import java.awt.*;
+
+
+public class DrawGhost extends Applet
+{
+	public static int xGhostOrange = 10;
+	public static int yGhostOrange = 10;
+	public static int xGhostRed = 10;
+	public static int yGhostRed = 10;
+	public static int xGhostPink = 10;
+	public static int yGhostPink = 10;
+	public static int xGhostCyan = 10;
+	public static int yGhostCyan = 10;
+	public static int y1r = 34, y2r = 39, y1o = 34, y2o = 39, y1p = 34, y2p = 39, y1c = 34, y2c = 39;
+	public static int x1o = 5, x2o = 10, x3o = 7, x1r = 5, x2r = 10, x3r = 7, x1p = 5, x2p = 10, x3p = 7, x1c = 5, x2c = 10, x3c = 7;
+	
+	public void init()
+	{
+	}
+	public void paint(Graphics g)
+	{
+		this.drawGhostRed(g);
+		this.drawGhostOrange(g);
+		this.drawGhostPink(g);
+		this.drawGhostCyan(g);
+	}
+	public static void drawGhostRed(Graphics g)
+	{
+		int[] yGhost = {y1r, y1r, y2r}; // 60 60 70
+		int[] xGhost1 = {x1r+5, x2r+5, x3r+5};
+		int[] xGhost2 = {x1r+10, x2r+10, x3r+10};
+		int[] xGhost3 = {x1r+15, x2r+15, x3r+15};
+		int[] xGhost4 = {x1r+20, x2r+20, x3r+20};
+		int[] xGhost5 = {x1r+25, x2r+25, x3r+25};
+		g.setColor(Color.red);
+		g.fillOval(xGhostRed, yGhostRed, 25, 25);
+		g.fillRect(xGhostRed, yGhostRed + 12, 25, 12);
+		g.fillPolygon(xGhost1, yGhost, 3);
+		g.fillPolygon(xGhost2, yGhost, 3);
+		g.fillPolygon(xGhost3, yGhost, 3);
+		g.fillPolygon(xGhost4, yGhost, 3);
+		g.fillPolygon(xGhost5, yGhost, 3);
+		g.setColor(Color.WHITE);
+		g.fillOval(xGhostRed + 5, yGhostRed + 10, 5, 5);
+		g.fillOval(xGhostRed + 13, yGhostRed + 10, 5, 5);
+		
+		
+	}
+	public static void drawGhostOrange(Graphics g)
+	{
+		int[] yGhost = {y1o, y1o, y2o}; // 60 60 70
+		int[] xGhost1 = {x1o+65, x2o+65, x3o+65};
+		int[] xGhost2 = {x1o+70, x2o+70, x3o+70};
+		int[] xGhost3 = {x1o+75, x2o+75, x3o+75};
+		int[] xGhost4 = {x1o+80, x2o+80, x3o+80};
+		int[] xGhost5 = {x1o+85, x2o+85, x3o+85};
+		g.setColor(Color.ORANGE);
+		g.fillOval(xGhostOrange+60, yGhostOrange, 25, 25);
+		g.fillRect(xGhostOrange+60, yGhostOrange + 12, 25, 12);
+		g.fillPolygon(xGhost1, yGhost, 3);
+		g.fillPolygon(xGhost2, yGhost, 3);
+		g.fillPolygon(xGhost3, yGhost, 3);
+		g.fillPolygon(xGhost4, yGhost, 3);
+		g.fillPolygon(xGhost5, yGhost, 3);
+		g.setColor(Color.WHITE);
+		g.fillOval(xGhostOrange + 65, yGhostOrange + 10, 5, 5);
+		g.fillOval(xGhostOrange + 74, yGhostOrange + 10, 5, 5);
+		
+		
+		
+	}
+	public static void drawGhostPink(Graphics g)
+	{
+		
+		int[] yGhost = {y1p+70, y1p+70, y2p+70}; // 60 60 70
+		int[] xGhost1 = {x1p+65, x2p+65, x3p+65};
+		int[] xGhost2 = {x1p+70, x2p+70, x3p+70};
+		int[] xGhost3 = {x1p+75, x2p+75, x3p+75};
+		int[] xGhost4 = {x1p+80, x2p+80, x3p+80};
+		int[] xGhost5 = {x1p+85, x2p+85, x3p+85};
+		g.setColor(Color.PINK);
+		g.fillOval(xGhostPink+60, yGhostPink+70, 25, 25);
+		g.fillRect(xGhostPink+60, yGhostPink+82, 25, 12);
+		g.fillPolygon(xGhost1, yGhost, 3);
+		g.fillPolygon(xGhost2, yGhost, 3);
+		g.fillPolygon(xGhost3, yGhost, 3);
+		g.fillPolygon(xGhost4, yGhost, 3);
+		g.fillPolygon(xGhost5, yGhost, 3);
+		g.setColor(Color.WHITE);
+		g.fillOval(xGhostPink + 65, yGhostPink + 80, 5, 5);
+		g.fillOval(xGhostPink + 74, yGhostPink + 80, 5, 5);
+		
+		
+		
+	}
+	public static void drawGhostCyan(Graphics g)
+	{
+		int[] yGhost = {y1c+70, y1c+70, y2c+70}; // 60 60 70
+		int[] xGhost1 = {x1c+5, x2c+5, x3c+5};
+		int[] xGhost2 = {x1c+10, x2c+10, x3c+10};
+		int[] xGhost3 = {x1c+15, x2c+15, x3c+15};
+		int[] xGhost4 = {x1c+20, x2c+20, x3c+20};
+		int[] xGhost5 = {x1c+25, x2c+25, x3c+25};
+		g.setColor(Color.CYAN);
+		g.fillOval(xGhostCyan, yGhostCyan+70, 25, 25);
+		g.fillRect(xGhostCyan, yGhostCyan+82, 25, 12);
+		g.fillPolygon(xGhost1, yGhost, 3);
+		g.fillPolygon(xGhost2, yGhost, 3);
+		g.fillPolygon(xGhost3, yGhost, 3);
+		g.fillPolygon(xGhost4, yGhost, 3);
+		g.fillPolygon(xGhost5, yGhost, 3);
+		g.setColor(Color.WHITE);
+		g.fillOval(xGhostCyan + 5, yGhostCyan+80, 5, 5);
+		g.fillOval(xGhostCyan + 13, yGhostCyan+80, 5, 5);
+		
+		
+	}
+}
