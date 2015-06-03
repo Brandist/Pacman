@@ -1,0 +1,76 @@
+package play;
+
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+import drawghost.DrawGhost;
+
+public class PlayGame extends Applet implements KeyListener{
+	int ikey;
+	String skey = "";
+	boolean b = true;
+	public void init(){
+		
+		addKeyListener(this);
+
+		
+	}
+	
+	public void paint(Graphics g){
+		
+			DrawGhost.drawGhostRed(g);
+			DrawGhost.drawGhostOrange(g);
+			DrawGhost.drawGhostPink(g);
+			DrawGhost.drawGhostCyan(g);
+		
+		
+		
+		g.setColor(Color.black);
+		g.drawString(skey, 20, 20);
+	}
+	@Override
+	public void keyPressed(KeyEvent ke) {
+		if(ke.getKeyCode() == 37){
+			DrawGhost.xGhostCyan--;
+			DrawGhost.x1c--; 
+			DrawGhost.x2c--;
+			DrawGhost.x3c--;
+		}
+		if(ke.getKeyCode() == 38){
+			DrawGhost.yGhostCyan--;
+			DrawGhost.y1c--;
+			DrawGhost.y2c--;
+		}
+		if(ke.getKeyCode() == 40){
+			DrawGhost.yGhostCyan++;
+			DrawGhost.y1c++;
+			DrawGhost.y2c++;
+		}
+		if(ke.getKeyCode() == 39){
+			DrawGhost.xGhostCyan++;
+			DrawGhost.x1c++; 
+			DrawGhost.x2c++;
+			DrawGhost.x3c++;
+		}
+		ikey = ke.getKeyCode();
+		skey = "" + ikey;
+		
+		repaint();
+		// links = 37
+		// rechts = 39
+		// omhoog = 38
+		// omlaag = 40
+		
+	}
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent ke) {
+		
+		
+	}
+}
