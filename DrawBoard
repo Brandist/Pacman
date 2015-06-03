@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 
 public class DrawBoard extends Applet implements MouseListener{
-	private Image img;
+	private static Image img;
 	int x;
 	int y;
 	int key;
@@ -20,6 +20,7 @@ public class DrawBoard extends Applet implements MouseListener{
 		
 	}
 	
+	
 	public void paint(Graphics g){
 		this.drawBoard(g);
 		g.setColor(Color.WHITE);
@@ -27,9 +28,9 @@ public class DrawBoard extends Applet implements MouseListener{
 		g.drawString("y = " + y, 1, 20);
 		System.out.println(key);
 	}
-	public void drawBoard(Graphics g){
+	public static void drawBoard(Graphics g){
 		g.setColor(Color.WHITE);
-		g.drawImage(img, 20, 20, this);
+		g.drawImage(img, 20, 20, null);
 		g.drawLine(515, 260, 360, 260);
 		g.drawLine(185, 260, 30, 260);
 		g.drawLine(135, 55, 135, 485);
