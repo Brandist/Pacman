@@ -4,6 +4,8 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import drawPac.DrawPac;
+import drawboard.DrawBoard;
 import drawghost.DrawGhost;
 
 public class PlayGame extends Applet implements KeyListener{
@@ -19,11 +21,12 @@ public class PlayGame extends Applet implements KeyListener{
 	
 	public void paint(Graphics g){
 		
-			DrawGhost.drawGhostRed(g);
-			DrawGhost.drawGhostOrange(g);
-			DrawGhost.drawGhostPink(g);
-			DrawGhost.drawGhostCyan(g);
-		
+		DrawBoard.drawBoard(g);	
+		DrawGhost.drawGhostRed(g);
+		DrawGhost.drawGhostOrange(g);
+		DrawGhost.drawGhostPink(g);
+		DrawGhost.drawGhostCyan(g);
+		DrawPac.drawPacman(g);
 		
 		
 		g.setColor(Color.black);
@@ -32,26 +35,20 @@ public class PlayGame extends Applet implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent ke) {
 		if(ke.getKeyCode() == 37){
-			DrawGhost.xGhostCyan--;
-			DrawGhost.x1c--; 
-			DrawGhost.x2c--;
-			DrawGhost.x3c--;
-		}
+			DrawPac.xPacman--;
+			DrawPac.xOog--;
+			}
 		if(ke.getKeyCode() == 38){
-			DrawGhost.yGhostCyan--;
-			DrawGhost.y1c--;
-			DrawGhost.y2c--;
+			DrawPac.yPacman--;
+			DrawPac.yOog--;
 		}
 		if(ke.getKeyCode() == 40){
-			DrawGhost.yGhostCyan++;
-			DrawGhost.y1c++;
-			DrawGhost.y2c++;
+			DrawPac.yPacman++;
+			DrawPac.yOog++;
 		}
 		if(ke.getKeyCode() == 39){
-			DrawGhost.xGhostCyan++;
-			DrawGhost.x1c++; 
-			DrawGhost.x2c++;
-			DrawGhost.x3c++;
+			DrawPac.xOog++;
+			DrawPac.xPacman++;
 		}
 		ikey = ke.getKeyCode();
 		skey = "" + ikey;
